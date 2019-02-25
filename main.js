@@ -1,14 +1,19 @@
-import axiosCache from "./index"
+import axiosCache, { setConfig } from "./index"
 
- 
+document.getElementById("ok").onclick = function () {
+    setConfig(true)
+    init()
+}
+document.getElementById("no").onclick = function () {
+    setConfig(false)
+    init()
+}
+function init() {
 
-
-
-
-function init() { 
-    axiosCache.get("http://172.168.1.163:8085/admin/supplier/list")
+    axiosCache.get("http://localhost:3002/")
         .then(r => {
+            console.log("s")
             console.log(r)
+            console.log("e")
         });
 }
-init()

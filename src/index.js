@@ -4,8 +4,8 @@
  */
 
 
- 
-import AxiosCache from "./axiosCache"
 
-export default  AxiosCache;
- 
+import AxiosCache from "./axiosCache"
+import { setConfig, isCache } from "./../config"
+export default AxiosCache;
+export { setConfig, isCache }

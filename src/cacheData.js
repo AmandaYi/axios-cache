@@ -8,19 +8,32 @@
  * 
  *  */
 
-
+import MD5 from "md5"
 
 let cacheData = new Map()
 
 
-// function GetCache(key) {
+function GetCache(key) {
+    if (cacheData.get(key)) {
 
-//     return cacheData.get(key) ? cacheData.get(key) : new Error("no search this key, pleace check your input key")
-// }
+        return {
+            data:cacheData.get(key),
+            status:true
+        }
+    } else {
+        return {
+            data:null,
+            status:false
+        }
+    }
 
-// function SetCache(key, value) {
-//     return cacheData.set(key, value)
-// }
+}
+function md5Key(key) {
+    return MD5(key)
+}
+function SetCache(key, value) {
+    return cacheData.set(key, value)
+}
 
 // function clearCache() {
 //     return cacheData.clear()
@@ -32,4 +45,4 @@ let cacheData = new Map()
 // }
 
 
-export default cacheData
+export { md5Key, GetCache ,SetCache } 

@@ -2,9 +2,16 @@
  * @name 配置信息
  *
  */
-const isCache = true
+let isCache = true
+function setConfig(boolean) {
+    if ((typeof boolean) == "boolean") {
+        isCache = boolean
+    } else {
+        throw new Error("function setConfig's argument must be type boolean")
+    }
+}
 
-// let r = true
-
-// -
-// export default r;
+export {
+    setConfig,
+    isCache
+};

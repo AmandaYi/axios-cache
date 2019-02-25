@@ -1,18 +1,19 @@
 const path = require("path")
+let mode = process.env.NODE_ENV
 module.exports = {
     devtool: 'source-map',
-    mode: "development",
+    mode,
     // 入口
     entry: {
         /* ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ */
         // 这里新增加了一个入口,并修改了入口的名字也就是index,和 index2
-        index: "./main.js", 
+        index: "./main.js",
         /* ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ */
     },
     // 出口
     output: {
         // 出口的文件夹
-        path: path.resolve(__dirname, "/dist/"),
+        path: path.resolve(__dirname, "./dist/"),
         // 修改打包文件的名字,
         // [name] 的意思就是 根据入口文件的名字进行输出打包
         /* ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ */

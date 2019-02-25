@@ -1,21 +1,26 @@
 {
-  "name": "axios-cache",
-  "version": "1.0.0",
+  "name": "axios-caches",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server",
     "dev": "set NODE_ENV=development&webpack",
-    "build": "set NODE_ENV=pro&webpack"
+    "build": "set NODE_ENV=production&webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "amandayi",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "md5": "^2.2.1"
   },
   "devDependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
