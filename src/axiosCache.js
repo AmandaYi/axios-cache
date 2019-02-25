@@ -18,22 +18,20 @@ import cacheData from './cacheData';
 
 let o = {
     get: function () {
-        return new Promise((resolve, rejects) => {
-            
-            if (isCache) {
-                resolve("1")
-            } else {
-                rejects()
-            }
+        return new Promise((resolve, reject) => {
+            resolve("ok")
+            reject("no")
         })
     }
 }
-// let p = new Proxy(o, {
-//     get: function (target, key, receiver) {
-//         console.log("使用了o.get")
-//         return Reflect.get(target, key, receiver)
-//     }
-// })
+let p = new Proxy(o, {
+    get: function (target, key, receiver) {
+        // 判断状态
+        console.log("s")
+        console.log(isCache)
+        return Reflect.get(target, key, receiver)
+    }
+})
 function isInter(is) {
     if (arguments.length == 1) {
         // 处理值
@@ -51,4 +49,4 @@ function isInter(is) {
     }
 }
 
-export default o
+export default p 
