@@ -5,8 +5,7 @@
 
 
  
-import AxiosCache from "axiosCache"
- 
-module.export = AxiosCache;
+import AxiosCache from "./axiosCache"
 
-module.export.default= AxiosCache;
+export default  AxiosCache;
+ 
